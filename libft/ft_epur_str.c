@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo2.c                                            :+:      :+:    :+:   */
+/*   ft_epur_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 12:50:49 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/28 11:13:26 by bbessard         ###   ########.fr       */
+/*   Created: 2023/04/28 13:07:27 by bbessard          #+#    #+#             */
+/*   Updated: 2023/04/28 13:07:31 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
 
-void	big_algorithm(t_elements *s)
+int	main(int ac, char **av)
 {
 	int	i;
-	int	j;
-	int	size;
+	int	flag;
 
-	i = 0;
-	size = s->size_a;
-	while (((!check_order(s))))
+	if (ac == 2)
 	{
-		j = 0;
-		while (j < size && (!check_order(s)))
+		while (av[1][i] == ' ' || av[1][i] == '\t')
+			i++;
+		i = 0;
+		while (av[1][i])
 		{
-			j++;
-			if (((s->stack_a[0] >> i) & 1) == 0)
-				ft_push_b(s);
-			else
-				ft_rotate_a(s);
+			if (av[1][i] == ' ' || av[1][i] == '\t')
+				flag = 1;
+			if (!(av[1][i] == ' ' || av[1][i] == '\t'))
+			{
+				if (flag == 1)
+				{
+					write (1, " ", 1);
+					flag = 0;
+				}
+				write (1, &av[1][i], 1);
+			}
+			i++;
 		}
-		while (s->size_b > 0)
-			ft_push_a(s);
-		i++;
 	}
+	write (1, "\n", 1);
 }

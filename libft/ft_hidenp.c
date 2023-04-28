@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo2.c                                            :+:      :+:    :+:   */
+/*   ft_hidenp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 12:50:49 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/28 11:13:26 by bbessard         ###   ########.fr       */
+/*   Created: 2023/04/28 13:07:35 by bbessard          #+#    #+#             */
+/*   Updated: 2023/04/28 13:07:37 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	big_algorithm(t_elements *s)
+#include <unistd.h>
+/*
+ * Program hidenp : Is s1 in s2 ? display 1 if yes, if not 0
+ *
+*/
+int	main(int ac, char **av)
 {
 	int	i;
 	int	j;
-	int	size;
 
 	i = 0;
-	size = s->size_a;
-	while (((!check_order(s))))
+	j = 0;
+	if (ac == 3)
 	{
-		j = 0;
-		while (j < size && (!check_order(s)))
+		while (av[2][j] && av[1][i])
 		{
+			if (av[2][j] == av[1][i])
+				i++;
 			j++;
-			if (((s->stack_a[0] >> i) & 1) == 0)
-				ft_push_b(s);
-			else
-				ft_rotate_a(s);
 		}
-		while (s->size_b > 0)
-			ft_push_a(s);
-		i++;
+		if (av[1][i] == '\0')
+			write (1, "1", 1);
+		else
+			write (1, "0", 1);
 	}
+	write (1, "\n", 1);
 }

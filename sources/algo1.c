@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 12:50:46 by bbessard          #+#    #+#             */
-/*   Updated: 2023/03/06 13:45:43 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:51:06 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	two_args_alg(t_elements *s)
 {
 	if (s->stack_a[0] > s->stack_a[1])
 		ft_swap_a(s);
-}
+}	
 
 void	three_int_alg(t_elements *s)
 {
