@@ -6,15 +6,9 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:55:22 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/28 14:01:30 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:16:52 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-push_swap calculates and displays on the standard
-output the smallest progam using Push_swap instruction language 
-that sorts integer arguments received
-*/
 
 #include "push_swap.h"
 

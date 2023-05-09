@@ -22,9 +22,7 @@ void	create_stacks(t_elements *ps)
 		error();
 }
 
-/*
-** comment me
-*/
+
 void	init_stack(t_elements *s)
 {
 	int	size;

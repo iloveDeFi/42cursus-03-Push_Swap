@@ -6,9 +6,14 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 12:50:49 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/28 11:13:26 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:53:08 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Some kind of radix using bits 
+** Binary cause only two stacks A & B
+*/
 
 #include "push_swap.h"
 
