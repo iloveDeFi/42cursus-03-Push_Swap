@@ -6,56 +6,84 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:06:51 by bbessard          #+#    #+#             */
-/*   Updated: 2023/05/10 14:19:58 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/05/11 10:46:41 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
+# include "ft_printf.h"
+# include "libft.h"
 # include <stdlib.h>
-# include <unistd.h>
-# include "ft_printf/ft_printf.h"
+# define LONG_V 9223372036854775808
 
-typedef struct s_list {
-	int				data;
-	int				index;
-	struct s_list	*next;
-}	t_list;
+/*
+** Types
+*/
 
-//linked_list
-void	add_int(t_list **head, int nb);
-t_list	*get_last(t_list *head);
-void	list_free(t_list **head);
+typedef struct s_struct
+{
+	char	**arguments;
+	int		*stack_a;
+	int		*stack_b;
+	int		*tmp;
+	int		size_a;
+	int		size_b;
+	int		min;
+	int		i;
+	int		j;
+	int		counter;
+	int		small_i;
+	int		big_i;
+}			t_elements;
 
-//push_swap_utils
-int		list_size(t_list *head);
-int		isanumber(char *str);
-void	print_list(t_list *head);
-void	print_list_index(t_list *head);
-int		free_split(char **tofree, int flag, char condition);
+/* main.c*/
+void	mult_args_elements(t_elements *ps, int argc, char **argv);
+void	two_args_elements(t_elements *ps, char **argv);
 
-//rotate
-void	ra(t_list **head_a);
+/* error.c */
+int		error(void);
 
-//reverse rotate
-void	rra(t_list **head_a);
+/* instructions.c */
+void	ft_swap_a(t_elements	*s);
+void	ft_swap_b(t_elements	*s);
+void	ft_swap_ss(t_elements	*s);
+void	ft_push_a(t_elements	*s);
+void	ft_push_b(t_elements	*s);
+void	ft_rotate_a(t_elements	*s);
+void	ft_rotate_b(t_elements	*s);
+void	ft_rotate_rr(t_elements	*s);
+void	ft_reverse_rotate_a(t_elements	*s);
+void	ft_reverse_rotate_b(t_elements	*s);
+void	ft_reverse_rotate_rr(t_elements	*s);
 
-//swap & push
-void	pa(t_list **head_a, t_list **head_b);
-void	pb(t_list **head_b, t_list **head_a);
-void	sa(t_list **head_a);
+/* sort.c */
+void	choose_sort(t_elements	*s);
+void	sort_2(t_elements	*s);
+void	sort_3(t_elements	*s);
+void	sort_4(t_elements	*s);
+void	sort_5(t_elements	*s);
+void	sort(t_elements	*s);
 
-//sort
-void	sort(t_list **head_a, t_list **head_b);
-int		index_calcuation(t_list **head, int nb);
-int		to_push(int nb, int i);
-int		isordered(t_list *head);
+/* alg_utils.c */
+void	three_alg_help(t_elements *s);
+void	push_up(t_elements *s);
+void	find_smallest(t_elements	*s);
 
-//sort small
-int		position(t_list *head, int nb);
-void	sort_3(t_list **head, int base);
-void	sort_4(t_list **head_a, t_list **head_b, int base);
-void	sort_5(t_list **head_a, t_list **head_b);
+/* checks.c */
+int		check_order(t_elements	*s);
+void	check_max_min(char *str);
+void	check_non_num(char *str);
+void	check_doubles(int	*tab, int len);
+
+/* free.c */
+void	free_stacks(t_elements *s);
+
+/* stacks.c */
+void	create_stacks(t_elements *ps);
+void	init_stack(t_elements *s);
+
+/* normalize */
+void	ft_normalize(t_elements *s);
 
 #endif
