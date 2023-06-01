@@ -15,7 +15,7 @@ ft_put_u.c ft_put_x.c ft_put_p.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-NAME	= printf.a
+NAME	= libftprintf.a
 
 CC		= gcc
 RM		= rm -f

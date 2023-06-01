@@ -6,37 +6,11 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:55:22 by bbessard          #+#    #+#             */
-/*   Updated: 2023/05/11 10:24:25 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/06/01 11:43:17 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	main(int argc, char **argv)
-{
-	t_elements	ps;
-
-	ps.size_a = 0;
-	ps.size_b = 0;
-	ps.i = 0;
-	(void) argv;
-	if (argc > 1)
-	{
-		if (argc == 2)
-			two_args_elements(&ps, argv);
-		if (argc > 2)
-			mult_args_elements(&ps, argc, argv);
-		check_doubles(ps.stack_a, ps.size_a);
-		if (check_order(&ps))
-			free_stacks(&ps);
-		else
-		{
-			ft_normalize(&ps);
-			sort(&ps);
-		}
-		free_stacks(&ps);
-	}
-}
 
 void	two_args_elements(t_elements *ps, char **argv)
 {
@@ -70,5 +44,31 @@ void	mult_args_elements(t_elements *ps, int argc, char **argv)
 		check_max_min(argv[ps->i + 1]);
 		ps->stack_a[ps->i] = ft_atoi(argv[ps->i + 1]);
 		ps->i++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	t_elements	ps;
+
+	ps.size_a = 0;
+	ps.size_b = 0;
+	ps.i = 0;
+	(void) argv;
+	if (argc > 1)
+	{
+		if (argc == 2)
+			two_args_elements(&ps, argv);
+		if (argc > 2)
+			mult_args_elements(&ps, argc, argv);
+		check_doubles(ps.stack_a, ps.size_a);
+		if (check_order(&ps))
+			free_stacks(&ps);
+		else
+		{
+			ft_normalize(&ps);
+			sort(&ps);
+		}
+		free_stacks(&ps);
 	}
 }

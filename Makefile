@@ -6,12 +6,12 @@
 #    By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:49 by bbessard          #+#    #+#              #
-#    Updated: 2023/05/11 10:48:09 by bbessard         ###   ########.fr        #
+#    Updated: 2023/06/01 13:47:28 by bbessard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= swap_and_push.c rotate.c reverse.c checks.c stacks.c \
- free.c sort_help.c sort.c sort_small.c normalize.c errors.c \
+ free.c sort_help.c sort.c sort_small.c normalize.c errors.c main.c \
 
 SRC_DIR = sources/
 OBJS	:= $(SRCS:%.c=%.o)
@@ -32,7 +32,7 @@ all:		${NAME}
 ${NAME}:	${OBJS}
 		@make -C libft
 		@make -C printf
-		${CC} ${CFLAGS} $^ -Llibft -Lprintf -o ${NAME}
+		${CC} ${CFLAGS} $^ -Llibft -lft -Lprintf -lftprintf -o ${NAME}
 
 libft:
 		make -C libft
