@@ -6,27 +6,40 @@
 #    By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:49 by bbessard          #+#    #+#              #
-#    Updated: 2023/06/01 13:47:28 by bbessard         ###   ########.fr        #
+#    Updated: 2023/08/01 12:59:29 by bbessard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= swap_and_push.c rotate.c reverse.c checks.c stacks.c \
- free.c sort_help.c sort.c sort_small.c normalize.c errors.c main.c \
+NAME	=	push_swap
 
-SRC_DIR = sources/
+CC	=	gcc
+
+CFLAGS 	=	-Wall -Wextra -Werror #-fsanitize=address
+
+SRC	=	$(addprefix $(SRC_DIR), $(SRCS))
+
+SRCS	=	swap_and_push.c \
+					rotate.c \
+					reverse.c \
+					checks.c \
+					stacks.c \
+ 					free.c \
+					sort_help.c \
+					sort.c \
+					sort_small.c \
+					normalize.c \
+					errors.c \
+					main.c \
+
+SRCS_PATH	=	sources/
+
 OBJS	:= $(SRCS:%.c=%.o)
-SRC = $(addprefix $(SRC_DIR), $(SRCS))
 
-NAME	= push_swap
-
-CC		= gcc -g
-RM		= rm -f
-
-CFLAGS 	= -Wall -Wextra -Werror #-fsanitize=address
+RM	=	rm -f
 
 all:		${NAME}
 
-%.o:	$(SRC_DIR)%.c
+%.o:	$(SRCS_PATH)%.c
 		${CC} ${CFLAGS} -Ilibft -Iprintf -c $? -o $@
 
 ${NAME}:	${OBJS}
