@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:06:51 by bbessard          #+#    #+#             */
-/*   Updated: 2023/06/01 13:40:42 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/08/08 11:16:43 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 # include <stdlib.h>
 # define LONG_V 9223372036854775808
 
-/*
-** Types
-*/
+/*Types*/
 
 typedef struct s_struct
 {
@@ -38,13 +36,14 @@ typedef struct s_struct
 }			t_elements;
 
 /* main.c*/
+int		main(int argc, char **argv);
 void	mult_args_elements(t_elements *ps, int argc, char **argv);
 void	two_args_elements(t_elements *ps, char **argv);
 
 /* error.c */
 int		error(void);
 
-/* instructions.c */
+/* all instructions */
 void	ft_swap_a(t_elements	*s);
 void	ft_swap_b(t_elements	*s);
 void	ft_swap_ss(t_elements	*s);

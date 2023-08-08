@@ -12,9 +12,6 @@
 
 #include "push_swap.h"
 
-/* Décale d’une position vers le bas tous les élements de la pile a.
-** Le dernier élément devient le premier.
-*/
 void	ft_reverse_rotate_a(t_elements *s)
 {
 	int	tmp;
@@ -32,11 +29,6 @@ void	ft_reverse_rotate_a(t_elements *s)
 		ft_printf("rra\n");
 }
 
-/* 
-** Décale d’une position vers le bas tous les élements de la pile b.
-** Le dernier élément devient le premier. 
-*/
-
 void	ft_reverse_rotate_b(t_elements *s)
 {
 	int	tmp;
@@ -53,8 +45,6 @@ void	ft_reverse_rotate_b(t_elements *s)
 	if (s->counter == 0)
 		ft_printf("rra\n");
 }
-
-/*rrr : rra et rrb en même temps*/
 
 void	ft_reverse_rotate_rrr(t_elements *s)
 {

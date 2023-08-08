@@ -6,16 +6,11 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:04:09 by bbessard          #+#    #+#             */
-/*   Updated: 2023/06/01 13:30:18 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:25:27 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*
-** sa (swap a) : Intervertit les 2 premiers éléments au sommet de la pile a. 
-** Ne fait rien s’il n’y en a qu’un ou aucun.
-*/
 
 void	ft_swap_a(t_elements *s)
 {
@@ -31,11 +26,6 @@ void	ft_swap_a(t_elements *s)
 	}
 }
 
-/*
-** sb (swap b ) : Intervertit les 2 premiers éléments au sommet de la pile b. 
-** Ne fait rien s’il n’y en a qu’un ou aucun.
-*/
-
 void	ft_swap_b(t_elements *s)
 {
 	int	tmp;
@@ -50,10 +40,6 @@ void	ft_swap_b(t_elements *s)
 	}
 }
 
-/*
-** ss : sa et sb en même temps.
-*/
-
 void	ft_swap_ss(t_elements *s)
 {
 	s->counter = 1;
@@ -62,11 +48,6 @@ void	ft_swap_ss(t_elements *s)
 	ft_printf("ss\n");
 	s->counter = 0;
 }
-
-/*
-** pa (push a) : Prend le premier élément au sommet de b et le met sur a.
-** Ne fait rien si b est vide.
-*/
 
 void	ft_push_a(t_elements *s)
 {
@@ -93,10 +74,6 @@ void	ft_push_a(t_elements *s)
 	}
 }
 
-/*
-** pb (push b) : Prend le premier élément au sommet de a et le met sur b.
-** Ne fait rien si a est vide.
-*/
 void	ft_push_b(t_elements *s)
 {
 	int	i_a;

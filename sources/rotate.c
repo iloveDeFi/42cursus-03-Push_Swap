@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inst_Rotate.c                                      :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:04:37 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/28 14:01:31 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:27:06 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* 
-** Décale d’une position vers le haut tous les élements de la pile a.
-** Le premier élément devient le dernier. 
-*/
 
 void	ft_rotate_a(t_elements *s)
 {
@@ -34,11 +29,6 @@ void	ft_rotate_a(t_elements *s)
 		ft_printf("ra\n");
 }
 
-/* 
-** Décale d’une position vers le haut tous les élements de la pile b.
-** Le premier élément devient le dernier. 
-*/
-
 void	ft_rotate_b(t_elements *s)
 {
 	int	tmp;
@@ -55,10 +45,6 @@ void	ft_rotate_b(t_elements *s)
 	if (s->counter == 0)
 		ft_printf("rb\n");
 }
-
-/*
-**rr : ra et rb en même temps.
-*/
 
 void	ft_rotate_rr(t_elements *s)
 {
